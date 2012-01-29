@@ -1,0 +1,4 @@
+pcap-stat.pl - give statistics over multiple pcaps
+snort-alert-stat.pl - group alerts and give grouped statistics 
+
+
