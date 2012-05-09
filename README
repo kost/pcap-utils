@@ -1,7 +1,8 @@
 pcap-stat.pl - give statistics over multiple pcaps
 snort-alert-stat.pl - group alerts and give grouped statistics 
+extract-ips.pl - extract IPs (source or destination or both) from pcap files using pcap filters
 
 Few examples:
 
 cat filelist.txt | ./pcap-stat.pl -v -f 'dst 127.0.0.1 and tcp port 80 and tcp[tcpflags] & (tcp-syn) != 0'
-
+cat filelist.txt | ./extract-ips.pl -v -s -f 'dst 127.0.0.1 and tcp port 80 and tcp[tcpflags] & (tcp-syn) != 0' > source-ips.txt
