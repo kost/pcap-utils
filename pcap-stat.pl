@@ -26,7 +26,7 @@ Getopt::Long::Configure ("bundling");
 
 my $result = GetOptions (
 	"f|filter=s" => \$config{'filter'},
-	"o|optimize" => \$config{'optimize'},
+	"o|optimize!" => \$config{'optimize'},
         "v|verbose+"  => \$config{'verbose'},
         "h|help" => \&help
 );
@@ -147,9 +147,9 @@ sub help {
         print "PCAP statistics. Copyright (C) Kost. Distributed under GPL.\n\n";
         print "Usage: $0 -f [filter]  \n";
         print "\n";
-        print " -f <s>  Use filter s <s>\n";
-        print " -o   	optimize <s>\n";
-        print " -v      verbose (-vv will be more verbose)\n";
+        print " -f <s>  	Use filter s <s>\n";
+        print " --no-optimize  	Do not optimize\n";
+        print " -v      	verbose (-vv will be more verbose)\n";
         print "\n";
 
         print "Example: echo 'pcap1.pcap' | $0 -f 'host 127.0.0.1 and port 80'\n";
